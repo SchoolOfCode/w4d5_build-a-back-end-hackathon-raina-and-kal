@@ -1,3 +1,4 @@
+// imports
 import express from "express";
 const router = express.Router();
 import recipes from "../libs/recipes-data.js";
@@ -17,8 +18,7 @@ router.get("/:id", function (req, res) {
   }
 });
 
-// Set up POST handler
-
+// POST handler
 router.post("/", function (req, res) {
   let userInput = req.body;
   recipes.push(userInput);
@@ -31,8 +31,7 @@ router.post("/", function (req, res) {
   res.json(responseObject);
 });
 
-// Set up default handler for /recipes
-
+// Default handler for /recipes
 router.get("/", function (req, res) {
   const responseObject = {
     success: "true",
@@ -42,4 +41,22 @@ router.get("/", function (req, res) {
   res.json(responseObject);
 });
 
+// Put request to replace whole object
+router.put("/", function (req, res) {
+  let update = req.body;
+  let updateId = Number(update.id);
+  for (let i = 0; i < recipes.length; i++) {
+    if (updateId === recipes[i].id) {
+        recipes[i] = update;
+        const responseObject = {
+        success: "true",
+        message: `Replaced recipe with ID: ${updateId}`,
+        data: recipes,
+      };
+      res.json(responseObject);
+    }
+  }
+});
+
+//export
 export { router as recipesRouter };
