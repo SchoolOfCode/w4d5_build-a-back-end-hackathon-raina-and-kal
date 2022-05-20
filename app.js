@@ -8,6 +8,14 @@ const PORT = 3000;
 app.use(express.static("public"));
 app.use(express.json());
 
+
+// route to recipes.js
+
+
+
+
+
+
 /* DO NOT CHANGE THIS ROUTE - it serves our front-end */
 app.get("/", function (req, res) {
   res.sendFile(html);
