@@ -3,44 +3,28 @@ import express from "express";
 const router = express.Router();
 import recipes from "../libs/recipes-data.js";
 
-
 // import handling functions
 import { getRecipeByID } from "../models/recipe-models.js";
+import { getRecipes } from "../models/recipe-models.js";
+import { createRecipe } from "../models/recipe-models.js";
+import { updateRecipeById } from "../models/recipe-models.js";
 
 // Get request by ID
 router.get("/:id", function (req, res) {
-  const responseObject = getRecipeByID(req.params.id);  
+  const responseObject = getRecipeByID(req.params.id);
   res.json(responseObject);
 });
 
 // POST handler
 router.post("/", function (req, res) {
-  let userInput = req.body;
-  recipes.push(userInput);
-  console.log(recipes);
-  const responseObject = {
-    success: "true",
-    message: `This is the new list of recipes`,
-    data: recipes,
-  };
+  const responseObject = createRecipe(req.body);
   res.json(responseObject);
 });
 
 // Put request to replace whole object
 router.put("/", function (req, res) {
-  let update = req.body;
-  let updateId = Number(update.id);
-  for (let i = 0; i < recipes.length; i++) {
-    if (updateId === recipes[i].id) {
-      recipes[i] = update;
-      const responseObject = {
-        success: "true",
-        message: `Replaced recipe with ID: ${updateId}`,
-        data: recipes,
-      };
-      res.json(responseObject);
-    }
-  }
+  const responseObject = updateRecipeById(req.body);
+  res.json(responseObject);
 });
 
 // Delete request to replace whole object
@@ -63,11 +47,7 @@ router.delete("/", function (req, res) {
 
 // Default handler for /recipes
 router.get("/", function (req, res) {
-  const responseObject = {
-    success: "true",
-    message: `This is all of the recipes`,
-    data: recipes,
-  };
+  const responseObject = getRecipes();
   res.json(responseObject);
 });
 
