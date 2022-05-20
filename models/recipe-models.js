@@ -10,7 +10,7 @@ export function getRecipes() {
 }
 
 // GET A RECIPE BY ID
-export function getRecipeByID(id) {
+export function getRecipeById(id) {
   id = Number(id); // Need to convert to a number
   for (let i = 0; i < recipes.length; i++) {
     if (id === recipes[i].id) {
@@ -52,5 +52,17 @@ export function updateRecipeById(update) {
 }
 
 // DELETE A RECIPE BY ID
-
-export function deleteRecipeByID(id) {}
+export function deleteRecipeById(id) {
+  id = Number(id);
+  for (let i = 0; i < recipes.length; i++) {
+    if (id === recipes[i].id) {
+        let deletedRecipe = recipes[i];
+        recipes.splice([i], [i]);
+        return {
+        success: "true",
+        message: `Deleted recipe with ID: ${id}`,
+        data: recipes, deletedRecipe,
+       };
+    }
+  }
+}

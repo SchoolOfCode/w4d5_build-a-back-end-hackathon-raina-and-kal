@@ -45,19 +45,19 @@ D - delete (delete)
 
 Modularizing data interactions 
 1. 
-- move logic from getRecipes into models/recipes.js
-    - import into recipes router file
+- move logic from getRecipes into models/recipes.js✅ 
+    - import into recipes router file✅ 
 2. 
-- move logic from getRecipeId into models/recipes.js
-    - import into recipes router file
+- move logic from getRecipeId into models/recipes.js ✅
+    - import into recipes router file ✅ 
 3. 
-- move logic from create recipe into models/recipes.js
-    - import into recipes router file
+- move logic from create recipe into models/recipes.js✅ 
+    - import into recipes router file✅ 
 4. 
-- move logic from update recipte into models/recipes.js
-    - import into recipes router file
+- move logic from update recipte into models/recipes.js✅ 
+    - import into recipes router file✅ 
 5. 
-- move logic from delete recipe into models/recipes.js
-    - import into recipes router file
+- move logic from delete recipe into models/recipes.js✅ 
+    - import into recipes router file✅ 
 
 
