@@ -37,9 +37,27 @@ Step 2. recipes.js file
         - route handler recipers - done ✅ 
         - return entire array as JSON object (payload)✅ 
         - assign the responseObject - done✅ 
-8
+
 C - create (post)
 R - read (get)
 U - update (patch and put )
 D - delete (delete)
+
+Modularizing data interactions 
+1. 
+- move logic from getRecipes into models/recipes.js
+    - import into recipes router file
+2. 
+- move logic from getRecipeId into models/recipes.js
+    - import into recipes router file
+3. 
+- move logic from create recipe into models/recipes.js
+    - import into recipes router file
+4. 
+- move logic from update recipte into models/recipes.js
+    - import into recipes router file
+5. 
+- move logic from delete recipe into models/recipes.js
+    - import into recipes router file
+
 
