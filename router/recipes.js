@@ -47,11 +47,29 @@ router.put("/", function (req, res) {
   let updateId = Number(update.id);
   for (let i = 0; i < recipes.length; i++) {
     if (updateId === recipes[i].id) {
-        recipes[i] = update;
-        const responseObject = {
+      recipes[i] = update;
+      const responseObject = {
         success: "true",
         message: `Replaced recipe with ID: ${updateId}`,
         data: recipes,
+      };
+      res.json(responseObject);
+    }
+  }
+});
+
+// Delete request to replace whole object
+router.delete("/", function (req, res) {
+  let deleteId = Number(req.body.id);
+  for (let i = 0; i < recipes.length; i++) {
+    if (deleteId === recipes[i].id) {
+      let deletedRecipe = recipes[i];
+      recipes.splice([i], [i]);
+      const responseObject = {
+        success: "true",
+        message: `Deleted recipe with ID: ${deleteId}`,
+        data: recipes,
+        deletedRecipe,
       };
       res.json(responseObject);
     }

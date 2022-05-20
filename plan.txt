@@ -28,9 +28,9 @@ Step 2. recipes.js file
         - assign the responseObject ✅ 
         - respond with responseObject ✅ 
 
-    - Delete 
-        - route handler with put query 
-        - delete the entry (whatever opposite of array.push() Slice it? ) 
+    - Delete ✅
+        - route handler with put query ✅
+        - delete the entry (whatever opposite of array.push() Slice it? )✅ 
 
 - Default (would be after CRUD routes) ✅
     - return recipe array (read 1) ✅ 
