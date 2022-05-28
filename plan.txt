@@ -1,0 +1,63 @@
+
+Step 1. App.js 
+- route requests from localhost:3000/recipes to the router/recipes.js ✅ 
+- add logger for testing purposes - which takes everything to route ✅
+
+Step 2. recipes.js file 
+- CRUD routes
+    - Read 2 by ID - GET - DONE ✅
+        - route handler recipes with query - DONE ✅
+        - for loop to iterate- DONE ✅
+            - if statement to match ID with array- DONE ✅
+            - assign the responseObject- DONE ✅
+            - respond with responseObject- DONE ✅
+
+    - Create - POST - DONE ✅
+        - route handler with post query - DONE ✅
+        - assign the request to a variable - DONE ✅ 
+        - push into array - DONE ✅
+        - assign the responseObject- DONE ✅
+        - respond with responseObject- DONE ✅ 
+
+    - Update - PUT ✅ 
+        - route handler with put  ✅ 
+        - assign the request to a variable ✅ 
+        - replacing into array ✅ 
+            - for loop to match with the ID OR handle a query to find it  ✅ 
+                - reassign recipes[i] = updated  ✅ 
+        - assign the responseObject ✅ 
+        - respond with responseObject ✅ 
+
+    - Delete ✅
+        - route handler with put query ✅
+        - delete the entry (whatever opposite of array.push() Slice it? )✅ 
+
+- Default (would be after CRUD routes) ✅
+    - return recipe array (read 1) ✅ 
+        - route handler recipers - done ✅ 
+        - return entire array as JSON object (payload)✅ 
+        - assign the responseObject - done✅ 
+
+C - create (post)
+R - read (get)
+U - update (patch and put )
+D - delete (delete)
+
+Modularizing data interactions 
+1. 
+- move logic from getRecipes into models/recipes.js✅ 
+    - import into recipes router file✅ 
+2. 
+- move logic from getRecipeId into models/recipes.js ✅
+    - import into recipes router file ✅ 
+3. 
+- move logic from create recipe into models/recipes.js✅ 
+    - import into recipes router file✅ 
+4. 
+- move logic from update recipte into models/recipes.js✅ 
+    - import into recipes router file✅ 
+5. 
+- move logic from delete recipe into models/recipes.js✅ 
+    - import into recipes router file✅ 
+
+

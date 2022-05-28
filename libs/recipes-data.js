@@ -9,6 +9,16 @@ const recipes = [
     image:
       "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg",
   },
+  {
+    id: 2,
+    title: "Other Meal",
+    ingredients: ["150g of beans", "150g of butter", "150g of toast"],
+    instructions: `Do some other stuff.
+  
+    Season to taste.`,
+    image:
+      "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-4-500x375.jpg",
+  },
 ];
 
 export default recipes;
